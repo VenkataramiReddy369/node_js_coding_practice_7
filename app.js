@@ -125,7 +125,7 @@ app.get("/matches/:matchId/players/", async (request, response) => {
    player_details.player_id AS playerId,
    player_details.player_name AS playerName
     from player_match_score
-    INNER JOIN player_details
+    NATURAl JOIN player_details
     where match_id = ${matchId};`;
   const playersMatch = await db.all(getPlayersMatchQuery);
   response.send(playersMatch);
